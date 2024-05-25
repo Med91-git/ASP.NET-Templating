@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Expenditure>
+
+@{
+    ViewData["Info"] = "Valeur attendue"; 
+}
+
+<HTML>
+<body>
+    <h1> Mes Dépenses Mensuelles :</h1>
+    <br>
+
+    <ul>
+        @foreach (Expenditure depense in Model)
+        {
+            <li>Produit : @depense.Name, Prix : @depense.Price €, Acheté le : @depense.Date</li>
+            <br>
+        }
+    </ul>
+
+    <p>Total des dépenses : @ViewData["somme"] euros</p>  
+</body>
